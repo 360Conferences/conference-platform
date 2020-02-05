@@ -1,0 +1,18 @@
+plugins {
+    id 'org.jetbrains.kotlin.js'
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':common')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-js"
+    implementation "org.jetbrains.kotlinx:kotlinx-html-js:0.6.11"
+
+    testImplementation "org.jetbrains.kotlin:kotlin-test-js"
+}
+
+kotlin.target.browser { }
