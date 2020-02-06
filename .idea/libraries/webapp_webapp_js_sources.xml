@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="webapp.webapp-js-sources">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/webapp/build/libs/webapp-js-sources.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,10 +1,11 @@
 plugins {
     id 'org.jetbrains.kotlin.multiplatform'
+    id 'org.jetbrains.kotlin.native.cocoapods'
     id 'com.android.library'
 }
 
 group 'com.conferenceplatform'
-version '0.0.1'
+version '0.0.1' // CocoaPods requires the podspec to have a version.
 
 repositories {
     mavenCentral()
@@ -15,6 +16,13 @@ android {
 }
 
 kotlin {
+
+    cocoapods {
+        // Configure fields required by CocoaPods.
+        summary = "Conference Platform iOS App"
+        homepage = "https://github.com/360Conferences/conference-platform"
+    }
+
     js() {
         browser {}
     }
@@ -70,6 +78,7 @@ kotlin {
         }
     }
 }
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
+configurations {
+    compileClasspath
 }

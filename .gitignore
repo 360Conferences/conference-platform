@@ -1,13 +1,14 @@
 */.DS_Store
 .DS_Store
 build/
+/.idea/
 
 # Android
 .gradle/*
 local.properties
 */build/*
 *.iml
-/.idea/*
+*/.idea/*
 
 # IDEA
 !/.idea/fileTemplates/
