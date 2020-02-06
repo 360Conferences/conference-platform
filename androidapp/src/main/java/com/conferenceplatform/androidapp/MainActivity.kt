@@ -3,6 +3,7 @@ package com.conferenceplatform.androidapp
 import androidx.appcompat.app.AppCompatActivity
 import sample.hello
 import android.os.Bundle
+import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -11,6 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        Toast.makeText(this, hello(), Toast.LENGTH_LONG).show()
+        val title: TextView = findViewById(R.id.title)
+        title.text = hello()
     }
 }
