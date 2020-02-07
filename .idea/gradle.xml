@@ -15,6 +15,19 @@
             <option value="$PROJECT_DIR$/backend" />
             <option value="$PROJECT_DIR$/browser" />
             <option value="$PROJECT_DIR$/common" />
+            <option value="$PROJECT_DIR$/iosapp" />
+          </set>
+        </option>
+        <option name="useQualifiedModuleNames" value="true" />
+      </GradleProjectSettings>
+      <GradleProjectSettings>
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/common/src/androidMain" />
+        <option name="gradleHome" value="$USER_HOME$/Desktop/icp-mobile/gradle" />
+        <option name="gradleJvm" value="1.8" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$/common/src/androidMain" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />
