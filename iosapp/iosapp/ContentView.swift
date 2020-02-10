@@ -3,7 +3,7 @@ import common
 
 struct ContentView: View {
     var body: some View {
-        Text(SampleKt.hello())
+        Text(PlatformKt.hello())
     }
 }
 

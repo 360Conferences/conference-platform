@@ -1,7 +1,7 @@
 package com.conferenceplatform.androidapp
 
 import androidx.appcompat.app.AppCompatActivity
-import sample.hello
+import common.hello
 import android.os.Bundle
 import android.widget.TextView
 import android.widget.Toast

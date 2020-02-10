@@ -1,7 +1,6 @@
+import common.hello
 import kotlin.browser.document
 import kotlin.browser.window
-
-import sample.hello
 
 import kotlin.browser.*
 import kotlinx.html.*
