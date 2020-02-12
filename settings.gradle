@@ -1,0 +1,6 @@
+rootProject.name = 'conference-platform'
+
+
+enableFeaturePreview('GRADLE_METADATA')
+
+include ':common', ':androidapp', ':browser', ':backend', ':iosapp'
