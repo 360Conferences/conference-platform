@@ -1,26 +1,29 @@
-*/.DS_Store
+# macOS
 .DS_Store
-build/
-/.idea/*
 
-# Android
-.gradle/*
+# Gradle
+.gradle
+build
+reports
+
+# Gradle Android
 local.properties
-*/build/*
-*.iml
-*/.idea/*
+captures
+*.hprof
 
 # IDEA
-!/.idea/fileTemplates/
-!/.idea/inspectionProfiles/
-!/.idea/scopes/
-!/.idea/codeStyles/
+*.iml
+/.idea
+!/.idea/runConfigurations
+!/.idea/codeStyles
+!/.idea/fileTemplates
+!/.idea/inspectionProfiles
+!/.idea/scopes
+!/.idea/copyright
 !/.idea/encodings.xml
-!/.idea/copyright/
 !/.idea/compiler.xml
 !/.idea/kotlinc.xml
 !/.idea/misc.xml
-!/.idea/modules.xml
 
 # Xcode
 # Xcode

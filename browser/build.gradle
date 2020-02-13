@@ -9,10 +9,10 @@ repositories {
 
 dependencies {
     implementation project(':common')
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-js"
-    implementation "org.jetbrains.kotlinx:kotlinx-html-js:0.6.11"
+    implementation deps.kotlin.stdlib.js
+    implementation deps.kotlin.html
 
-    testImplementation "org.jetbrains.kotlin:kotlin-test-js"
+    testImplementation deps.kotlin.test.js
 }
 
 kotlin.target.browser { }

@@ -1,7 +1,7 @@
 plugins {
+    id 'com.android.library'
     id 'org.jetbrains.kotlin.multiplatform'
     id 'org.jetbrains.kotlin.native.cocoapods'
-    id 'com.android.library'
 }
 
 group 'com.conferenceplatform'
@@ -12,82 +12,84 @@ repositories {
 }
 
 android {
-    compileSdkVersion(29)
+    compileSdkVersion = buildConfig.compileSdk
     defaultConfig {
-        minSdkVersion(21)
-        targetSdkVersion(29)
-        versionCode = 1
-        versionName = "1.0"
+        minSdkVersion = buildConfig.minSdk
+        targetSdkVersion = buildConfig.targetSdk
+        versionCode = buildConfig.version.code
+        versionName = buildConfig.version.name
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 }
 
 kotlin {
 
-    cocoapods {
-        // Configure fields required by CocoaPods.
-        summary = "Conference Platform iOS App"
-        homepage = "https://github.com/360Conferences/conference-platform"
-    }
-
     js() {
         browser {}
     }
     jvm()
     android()
-    // Change to iosArm64 (or iosArm32) to build library for iPhone device
-    iosX64("ios") {
-        binaries {
-            framework("core")
+    // Revert to just ios() once the gradle plugin can properly resolve this
+    if (System.getenv('SDK_NAME')?.startsWith('iphoneos')) {
+        iosArm64('ios') {
+            binaries.framework('model')
+        }
+    } else {
+        iosX64('ios') {
+            binaries.framework('model')
         }
     }
 
     sourceSets {
         commonMain {
             dependencies {
-                implementation kotlin('stdlib-common')
+                implementation deps.kotlin.stdlib.common
             }
         }
         commonTest {
             dependencies {
-                implementation kotlin('test-common')
-                implementation kotlin('test-annotations-common')
+                implementation deps.kotlin.test.common
+                implementation deps.kotlin.test.annotations
             }
         }
         jvmMain {
             dependencies {
-                implementation kotlin('stdlib-jdk8')
+                implementation deps.kotlin.stdlib.jdk
             }
         }
         jvmTest {
             dependencies {
-                implementation kotlin('test')
-                implementation kotlin('test-junit')
+                implementation deps.kotlin.test.jdk
             }
         }
         androidMain {
             dependencies {
-                implementation kotlin('stdlib')
+                implementation deps.kotlin.stdlib.jdk
             }
         }
         androidTest {
             dependencies {
-                implementation kotlin('test')
-                implementation kotlin('test-junit')
+                implementation deps.kotlin.test.jdk
             }
         }
         jsMain {
             dependencies {
-                implementation kotlin('stdlib-js')
+                implementation deps.kotlin.stdlib.js
             }
         }
         jsTest {
             dependencies {
-                implementation kotlin('test-js')
+                implementation deps.kotlin.test.js
             }
         }
         iosMain {}
         iosTest {}
+    }
+
+    cocoapods {
+        // Configure fields required by CocoaPods.
+        summary = "Conference Platform iOS App"
+        homepage = "https://github.com/360Conferences/conference-platform"
     }
 }
 
