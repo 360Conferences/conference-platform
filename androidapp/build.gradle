@@ -3,14 +3,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    compileSdkVersion buildConfig.compileSdk
     defaultConfig {
         applicationId "com.conferenceplatform.androidapp"
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        minSdkVersion buildConfig.minSdk
+        targetSdkVersion buildConfig.targetSdk
+        versionCode buildConfig.version.code
+        versionName buildConfig.version.name
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -24,7 +23,7 @@ android {
 dependencies {
     implementation project(":common")
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation deps.kotlin.stdlib.jdk
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.core:core-ktx:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
